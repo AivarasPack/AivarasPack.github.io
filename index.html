@@ -1,38 +1,169 @@
+Žemiau pateikiamas HTML kodo pavyzdys viešbučio pagrindiniam puslapiui. Šis pavyzdys apima pagrindinius puslapio elementus, tokius kaip antraštė, meniu, pagrindinė turinio sritis, galerinės nuotraukos, apgyvendinimo pasiūlymai, atsiliepimai ir kontaktinė informacija. Pavyzdys taip pat naudoja „Bootstrap“ biblioteką, kad išlaikytų šiuolaikinį ir pritaikomą dizainą.
+
+```html
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <!-- Metainformacija apie puslapį -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trumpas jūsų svetainės aprašymas, skirtas SEO.">
-    <title>Pagrindinis Puslapis</title>
-    <!-- CSS stilių prijungimas -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Faviconas -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Hotel Paradise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Jei norite pridėti papildomų stilių -->
 </head>
 <body>
-    <!-- Puslapio antraštė -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Pradžia</a></li>
-                <li><a href="about.html">Apie</a></li>
-                <li><a href="contact.html">Kontaktai</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hotel Paradise</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Pradžia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Apie mus</a></li>
+                <li class="nav-item"><a class="nav-link" href="#rooms">Kambariai</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Galerija</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Kontaktai</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron jumbotron-fluid text-center" style="background-image: url('https://via.placeholder.com/1920x500'); background-size: cover; color: white;">
+        <div class="container">
+            <h1 class="display-4">Sveiki atvykę į Hotel Paradise</h1>
+            <p class="lead">Jūsų tobulam poilsiui ir nepamirštamiems įspūdžiams</p>
+            <a href="#rooms" class="btn btn-primary">Peržiūrėti kambarius</a>
+        </div>
     </header>
-    <!-- Pagrindinis turinys -->
-    <main>
-        <h1>Sveiki atvykę į mano svetainę</h1>
-        <p>Čia galite rasti įvairią informaciją apie mūsų paslaugas ir produktus.</p>
-        <a href="about.html" class="button">Sužinokite daugiau</a>
-    </main>
-    <!-- Puslapio poraštė -->
-    <footer>
-        <p>&copy; 2024 Mano Svetainė. Visos teisės saugomos.</p>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Apie mus</h2>
+            <p class="text-center">Hotel Paradise - tai viešbutis, kuris siūlo aukščiausios klasės aptarnavimą ir patogumus jūsų nepamirštamai viešnagei. Mūsų misija yra užtikrinti, kad kiekvienas svečias jaustųsi ypatingai ir patogiai.</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Kambariai ir apartamentai</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Kambarys 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Standartinis kambarys</h5>
+                            <p class="card-text">Patogus kambarys su visais patogumais.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Kambarys 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Liukso numeris</h5>
+                            <p class="card-text">Prabangi viešnagė su ypatingu aptarnavimu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Kambarys 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Apartamentai</h5>
+                            <p class="card-text">Erdvūs apartamentai su atskira gyvenamąja zona.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Galerija</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Galerijos nuotrauka 1">
+                </div>
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Galerijos nuotrauka 2">
+                </div>
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Galerijos nuotrauka 3">
+                </div>
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Galerijos nuotrauka 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Atsiliepimai</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Nuostabi viešnagė, puikus aptarnavimas ir nepakartojamas vaizdas."</p>
+                        <footer class="blockquote-footer">Jonas, Vilnius</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Viskas buvo tobula. Labai rekomenduoju šį viešbutį!"</p>
+                        <footer class="blockquote-footer">Asta, Kaunas</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Kontaktai</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Adresas</h4>
+                    <p>Saulės g. 123, Vilnius, Lietuva</p>
+                    <h4>Telefonas</h4>
+                    <p>+370 600 12345</p>
+                    <h4>El. paštas</h4>
+                    <p>info@hotelparadise.lt</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Rašykite mums</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Vardas</label>
+                            <input type="text" class="form-control" id="name" placeholder="Įveskite savo vardą">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">El. paštas</label>
+                            <input type="email" class="form-control" id="email" placeholder="Įveskite savo el. pašto adresą">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Žinutė</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Parašykite savo žinutę"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Siųsti</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">© 2024 Hotel Paradise. Visos teisės saugomos.</p>
+        </div>
     </footer>
-    <!-- JavaScript failų prijungimas -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script
